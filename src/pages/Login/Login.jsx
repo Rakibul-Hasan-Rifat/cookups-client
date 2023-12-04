@@ -1,9 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserAuthContext } from "../../context/UserAuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
+    
+    const location = useLocation();
+    const navigate =useNavigate()
 
     const { logIn, user, googleLogin, githubLogin } = useContext(UserAuthContext)
     console.log(logIn, user)
@@ -21,6 +24,7 @@ const Login = () => {
             .then((res) => {
                 console.log(res.user)
                 toast.success('You have logged in successfully!!')
+                navigate(location.state)
             })
             .catch(err => {
                 console.error(err)
@@ -33,6 +37,7 @@ const Login = () => {
             .then((res) => {
                 console.log(res.user)
                 toast.success('You have logged in successfully using google!!')
+                navigate(location.state)
             })
             .catch(err => {
                 console.error(err)
@@ -45,6 +50,7 @@ const Login = () => {
             .then((res) => {
                 console.log(res.user)
                 toast.success('You have logged in successfully using github!!')
+                navigate(location.state)
             })
             .catch(err => {
                 console.error(err)

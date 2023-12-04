@@ -9,6 +9,7 @@ import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import ErrorElement from "../pages/ErrorElement/ErrorElement";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 import TypedFoodsPage from "../pages/TypedFoodsPage/TypedFoodsPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = new createBrowserRouter(
     createRoutesFromElements(
@@ -25,7 +26,7 @@ const router = new createBrowserRouter(
             />
             <Route
                 path="/addProduct"
-                element={<AddProduct />}
+                element={<PrivateRoute><AddProduct /></PrivateRoute>}
             />
             <Route
                 path="/updateFood/:id"
