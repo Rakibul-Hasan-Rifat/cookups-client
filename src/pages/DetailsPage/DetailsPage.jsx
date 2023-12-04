@@ -6,9 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 const DetailsPage = () => {
 
     const loadedFood = useLoaderData();
-    const { user } = useContext(UserAuthContext)
-    
-    
+    const { user } = useContext(UserAuthContext) 
 
     const { _id, image, name, price, rating, type, description } = loadedFood;
 
@@ -35,23 +33,6 @@ const DetailsPage = () => {
     
     return (
         <>
-            {/* <section style={{ margin: '120px auto 0', width: '90%' }}>
-                <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span
-                        onClick={() => setSliderCounter(sliderCounter < 2 ? 3 : --sliderCounter)}
-                        style={{ fontSize: '100px', position: 'absolute', left: '30px', color: '#fff', backgroundColor: 'rgba(79, 182, 92, .3)', borderRadius: '8px', padding: '0 20px', cursor: 'pointer' }}
-                    >
-                        {'<'}
-                    </span>
-                    <img src={loadedFoodType.images && loadedFoodType?.images[sliderCounter]} style={{ width: '100%' }} alt="" />
-                    <span
-                        onClick={() => setSliderCounter(sliderCounter > 2 ? 1 : ++sliderCounter)}
-                        style={{ fontSize: '100px', position: 'absolute', right: '30px', color: '#fff', backgroundColor: 'rgba(79, 182, 92, .3)', borderRadius: '8px', padding: '0 20px', cursor: 'pointer' }}
-                    >
-                        {'>'}
-                    </span>
-                </div>
-            </section> */}
             <Toaster />
             <section style={{ width: '90%', margin: '120px auto', }}>
                 <div style={{ borderRadius: '8px', overflow: 'hidden', border: '1px solid lightgray' }}>
