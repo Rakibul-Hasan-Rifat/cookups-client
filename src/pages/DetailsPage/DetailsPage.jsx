@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext,  } from "react";
 import { useLoaderData } from "react-router-dom";
 import { UserAuthContext } from "../../context/UserAuthProvider";
 import toast, { Toaster } from "react-hot-toast";
@@ -7,8 +7,8 @@ const DetailsPage = () => {
 
     const loadedFood = useLoaderData();
     const { user } = useContext(UserAuthContext)
-    let [sliderCounter, setSliderCounter] = useState(1)
-    const [loadedFoodType, setLoadedFoodType] = useState([])
+    
+    
 
     const { _id, image, name, price, rating, type, description } = loadedFood;
 
@@ -32,21 +32,10 @@ const DetailsPage = () => {
             })
     }
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/foodTypes/${type}`)
-            .then(res => res.json())
-            .then(data => {
-                setLoadedFoodType(data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [type])
-    console.log(loadedFoodType); console.log(sliderCounter);
-    console.log(loadedFoodType.images && loadedFoodType?.images[sliderCounter])
+    
     return (
         <>
-            <section style={{ margin: '120px auto 0', width: '90%' }}>
+            {/* <section style={{ margin: '120px auto 0', width: '90%' }}>
                 <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <span
                         onClick={() => setSliderCounter(sliderCounter < 2 ? 3 : --sliderCounter)}
@@ -62,7 +51,7 @@ const DetailsPage = () => {
                         {'>'}
                     </span>
                 </div>
-            </section>
+            </section> */}
             <Toaster />
             <section style={{ width: '90%', margin: '120px auto', }}>
                 <div style={{ borderRadius: '8px', overflow: 'hidden', border: '1px solid lightgray' }}>

@@ -47,7 +47,7 @@ const router = new createBrowserRouter(
             />
             <Route
                 path="/foods/food/:id"
-                element={<DetailsPage />}
+                element={<PrivateRoute><DetailsPage /></PrivateRoute>}
                 loader={({ params }) => fetch(`http://localhost:5000/foods/food/${params.id}`)}
             />
         </Route>
