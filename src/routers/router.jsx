@@ -21,7 +21,7 @@ const router = new createBrowserRouter(
             />
             <Route
                 path="/myCart/:email"
-                element={<MyCartPage />}
+                element={<PrivateRoute><MyCartPage /></PrivateRoute>}
                 loader={({ params }) => fetch(`http://localhost:5000/orderedFoods/${params.email}`)}
             />
             <Route
