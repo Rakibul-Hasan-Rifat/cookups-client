@@ -31,6 +31,7 @@ const AddProduct = () => {
             .then(result => {
                 console.log(result)
                 toast.success('A product has been added successfully!!')
+                e.target.reset()
             })
             .catch(err => {
                 console.log(err.message)
