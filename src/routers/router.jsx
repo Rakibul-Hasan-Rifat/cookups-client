@@ -30,7 +30,7 @@ const router = new createBrowserRouter(
             />
             <Route
                 path="/updateFood/:id"
-                element={<UpdateProduct />}
+                element={<PrivateRoute><UpdateProduct /></PrivateRoute>}
             />
             <Route
                 path="/login"

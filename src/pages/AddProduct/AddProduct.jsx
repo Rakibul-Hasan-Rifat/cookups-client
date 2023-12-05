@@ -1,3 +1,4 @@
+import toast, { Toaster } from "react-hot-toast";
 
 const AddProduct = () => {
 
@@ -27,26 +28,32 @@ const AddProduct = () => {
             body: JSON.stringify(food),
         })
             .then(res => res.json())
-            .then(result => console.log(result))
+            .then(result => {
+                console.log(result)
+                toast.success('A product has been added successfully!!')
+            })
             .catch(err => {
                 console.log(err.message)
             })
     }
 
     return (
-        <section style={{ width: '90%', margin: '80px auto', }}>
-            <h1 style={{ textAlign: 'center', marginBottom: '30px', color: 'rgb(79, 182, 92)', fontWeight: '600' }}>Add Product</h1>
-            <form onSubmit={handleAddProduct}>
-                <input type="text" style={inputStyles} name="name" placeholder="Name" required />
-                <input type="text" style={inputStyles} name="brand" placeholder="Brand Name" />
-                <input type="text" style={inputStyles} name="image" placeholder="Image URL" required />
-                <input type="text" style={inputStyles} name="type" placeholder="Type" />
-                <input type="text" style={inputStyles} name="price" placeholder="Price" required />
-                <input type="text" style={inputStyles} name="description" placeholder="Short Description" required />
-                <input type="text" style={inputStyles} name="rating" placeholder="Rating" required />
-                <button type="submit" style={buttonStyles}>Add Product</button>
-            </form>
-        </section>
+        <>
+            <Toaster />
+            <section style={{ width: '90%', margin: '80px auto', }}>
+                <h1 style={{ textAlign: 'center', marginBottom: '30px', color: 'rgb(79, 182, 92)', fontWeight: '600' }}>Add Product</h1>
+                <form onSubmit={handleAddProduct}>
+                    <input type="text" style={inputStyles} name="name" placeholder="Name" required />
+                    <input type="text" style={inputStyles} name="brand" placeholder="Brand Name" />
+                    <input type="text" style={inputStyles} name="image" placeholder="Image URL" required />
+                    <input type="text" style={inputStyles} name="type" placeholder="Type" />
+                    <input type="text" style={inputStyles} name="price" placeholder="Price" required />
+                    <input type="text" style={inputStyles} name="description" placeholder="Short Description" required />
+                    <input type="text" style={inputStyles} name="rating" placeholder="Rating" required />
+                    <button type="submit" style={buttonStyles}>Add Product</button>
+                </form>
+            </section>
+        </>
     );
 };
 
