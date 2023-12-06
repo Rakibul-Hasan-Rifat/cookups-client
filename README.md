@@ -1,5 +1,5 @@
 ## [cookups-cleint deployed in firebase](https://cookups-client.web.app/)
-## [cookups-cleint deployed in netlify]()
+## [cookups-cleint deployed in netlify](https://courageous-pavlova-4e27e8.netlify.app/)
 
 #### Website Features
     - Authentication using Firebase
