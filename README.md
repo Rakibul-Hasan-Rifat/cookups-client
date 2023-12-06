@@ -1,4 +1,4 @@
-## [cookups-cleint deployed in firebase]()
+## [cookups-cleint deployed in firebase](https://cookups-client.web.app/)
 ## [cookups-cleint deployed in netlify]()
 
 #### Website Features
