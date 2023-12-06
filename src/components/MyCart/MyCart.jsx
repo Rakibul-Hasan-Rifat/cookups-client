@@ -18,7 +18,7 @@ const MyCart = ({ food, totalLoadedFoods, setTotalLoadedFoods }) => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/orderedFoods/${_id}`, {
+                    fetch(`https://cookups-server.onrender.com/orderedFoods/${_id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

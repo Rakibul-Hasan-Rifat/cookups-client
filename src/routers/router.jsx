@@ -17,12 +17,12 @@ const router = new createBrowserRouter(
             <Route
                 path="/"
                 element={<Home />}
-                loader={() => fetch('http://localhost:5000/foodTypes')}
+                loader={() => fetch('https://cookups-server.onrender.com/foodTypes')}
             />
             <Route
                 path="/myCart/:email"
                 element={<PrivateRoute><MyCartPage /></PrivateRoute>}
-                loader={({ params }) => fetch(`http://localhost:5000/orderedFoods/${params.email}`)}
+                loader={({ params }) => fetch(`https://cookups-server.onrender.com/orderedFoods/${params.email}`)}
             />
             <Route
                 path="/addProduct"
@@ -43,12 +43,12 @@ const router = new createBrowserRouter(
             <Route
                 path="/foods/:type"
                 element={<TypedFoodsPage />}
-                loader={({ params }) => fetch(`http://localhost:5000/foods/${params.type}`)}
+                loader={({ params }) => fetch(`https://cookups-server.onrender.com/foods/${params.type}`)}
             />
             <Route
                 path="/foods/food/:id"
                 element={<PrivateRoute><DetailsPage /></PrivateRoute>}
-                loader={({ params }) => fetch(`http://localhost:5000/foods/food/${params.id}`)}
+                loader={({ params }) => fetch(`https://cookups-server.onrender.com/foods/food/${params.id}`)}
             />
         </Route>
     )

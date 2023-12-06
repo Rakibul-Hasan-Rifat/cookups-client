@@ -10,7 +10,7 @@ const TypedFoodsPage = () => {
     const [loadedFoodType, setLoadedFoodType] = useState([])
 
     useEffect(() => {
-        loadedFoods?.length > 0 && fetch(`http://localhost:5000/foodTypes/${params.type}`)
+        loadedFoods?.length > 0 && fetch(`https://cookups-server.onrender.com/foodTypes/${params.type}`)
             .then(res => res.json())
             .then(data => {
                 setLoadedFoodType(data)

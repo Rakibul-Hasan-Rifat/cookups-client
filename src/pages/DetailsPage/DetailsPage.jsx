@@ -12,7 +12,7 @@ const DetailsPage = () => {
 
     const handleAddToCart = (e) => {
         e.preventDefault();
-        fetch('http://localhost:5000/foodOrder', {
+        fetch('https://cookups-server.onrender.com/foodOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

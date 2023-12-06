@@ -24,7 +24,7 @@ const Login = () => {
             .then((res) => {
                 console.log(res.user)
                 toast.success('You have logged in successfully!!')
-                navigate(location.state)
+                navigate(location.state || '/')
             })
             .catch(err => {
                 console.error(err)
@@ -37,7 +37,7 @@ const Login = () => {
             .then((res) => {
                 console.log(res.user)
                 toast.success('You have logged in successfully using google!!')
-                navigate(location.state)
+                navigate(location.state || '/')
             })
             .catch(err => {
                 console.error(err)
@@ -50,7 +50,7 @@ const Login = () => {
             .then((res) => {
                 console.log(res.user)
                 toast.success('You have logged in successfully using github!!')
-                navigate(location.state)
+                navigate(location.state || '/')
             })
             .catch(err => {
                 console.error(err)
